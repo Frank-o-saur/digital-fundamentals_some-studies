@@ -1,0 +1,15 @@
+min=100
+max=-1
+for h in $(ls $1)
+do
+for file in $(cat $1$h)
+do
+age=$(echo $file | cut -d ":" -f2)
+if [[$age -lt $min]]
+then
+min=$age
+else [[$age -gt $max]]
+max=$age
+fi
+done
+done
