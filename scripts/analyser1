@@ -1,0 +1,10 @@
+for h in $(ls $1)
+do
+for file in $(cat $1$h)
+do
+name=$(echo $file | cut -d ":" -f1)
+age=$(echo $file | cut -d ":" -f2)
+mail=$(echo $file | cut -d ":" -f3)
+echo -e "Имя: $name, возраст: $age, почта: $mail"
+done
+done
