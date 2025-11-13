@@ -1,0 +1,15 @@
+sv=0
+nsv=0
+for h in $(ls $1)
+do
+for file in $(cat $1$h)
+do
+age=$(echo $file | cut -d ":" -f2)
+if [[ $age -gt 18]]
+then
+sv=$(($sv + 1))
+else
+nsv=$(($nsv + 1))
+fi
+done
+done
